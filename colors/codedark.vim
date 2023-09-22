@@ -82,6 +82,10 @@ if !exists("g:codedark_modern")
     let g:codedark_modern=0
 endif
 
+let s:cdWhite = {'gui': '#CDCDCD', 'cterm': s:cterm00, 'cterm256': '253'}
+let s:cdDarkGray = {'gui': '#808080', 'cterm': s:cterm04, 'cterm256': '236'}
+
+
 let s:cdNone = {'gui': 'NONE', 'cterm': 'NONE', 'cterm256': 'NONE'}
 let s:cdFront = {'gui': '#D4D4D4', 'cterm': s:cterm05, 'cterm256': '188'}
 let s:cdBack = {'gui': '#1E1E1E', 'cterm': s:cterm00, 'cterm256': '234'}
@@ -119,7 +123,7 @@ let s:cdDiffRedDark = {'gui': '#4B1818', 'cterm': s:cterm08, 'cterm256': '52'}
 if g:codedark_modern | let s:cdDiffRedDark = {'gui': '#da3633', 'cterm': 'NONE', 'cterm256': '52'} | endif
 let s:cdDiffRedLight = {'gui': '#6F1313', 'cterm': s:cterm08, 'cterm256': '52'}
 let s:cdDiffRedLightLight = {'gui': '#FB0101', 'cterm': s:cterm08, 'cterm256': '09'}
-let s:cdDiffGreenDark = {'gui': '#373D29', 'cterm': s:cterm0B, 'cterm256': '237'}
+let s:cdDiffGreenDark = {'gui': '#373D29', 'cterm': s:cterm0B, 'cterm256': '58'}
 if g:codedark_modern | let s:cdDiffGreenDark = {'gui': '#238636', 'cterm': 'NONE', 'cterm256': '237'} | endif
 let s:cdDiffGreenLight = {'gui': '#4B5632', 'cterm': s:cterm09, 'cterm256': '58'}
 let s:cdDiffBlueLight = {'gui': '#87d7ff', 'cterm': s:cterm0C, 'cterm256': '117'}
@@ -176,7 +180,7 @@ call <sid>hi('DiffText', s:cdBack, s:cdDiffBlueLight, 'none', {})
 call <sid>hi('EndOfBuffer', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('ErrorMsg', s:cdRed, s:cdBack, 'none', {})
 call <sid>hi('VertSplit', s:cdSplitDark, s:cdBack, 'none', {})
-call <sid>hi('Folded', s:cdLeftLight, s:cdLeftDark, 'underline', {})
+call <sid>hi('Folded', s:cdWhite, s:cdDarkGray, 'none', {})
 call <sid>hi('FoldColumn', s:cdLineNumber, s:cdBack, 'none', {})
 call <sid>hi('SignColumn', {}, s:cdBack, 'none', {})
 call <sid>hi('IncSearch', s:cdNone, s:cdSearchCurrent, 'none', {})
@@ -672,3 +676,58 @@ call <sid>hi('manFile', s:cdYellowOrange, {}, 'none', {})
 call <sid>hi('manEnvVarFile', s:cdYellowOrange, {}, 'none', {})
 call <sid>hi('manEnvVar', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('manHighlight', s:cdBlueGreen, {}, 'none', {})
+
+" Vimwiki
+let s:cdLightOrange = {'gui': '#CE9178', 'cterm': s:cterm0F, 'cterm256': '173'}
+let s:cdBrightOrange = {'gui': '#d75f00', 'cterm': s:cterm08, 'cterm256': '166'}
+let s:cdBrightYellow = {'gui': '#ffaf00', 'cterm': s:cterm08, 'cterm256': '214'}
+let s:cdBrightGreen  = {'gui': '#5faf00', 'cterm': s:cterm08, 'cterm256': '70'}
+let s:cdBrightRed    = {'gui': '#af0000', 'cterm': s:cterm08, 'cterm256': '124'}
+let s:cdBrightMagenta= {'gui': '#d70087', 'cterm': s:cterm08, 'cterm256': '162'}
+let s:cdBrightBlue   = {'gui': '#0087ff', 'cterm': s:cterm08, 'cterm256': '33'}
+let s:cdHideElement  = {'gui': '#1E1E1E', 'cterm': s:cterm08, 'cterm256': '235'}
+let s:cdHideElement1  = {'gui': '#303030', 'cterm': s:cterm08, 'cterm256': '238'}
+let s:cdBGElement  = {'gui': '#303030', 'cterm': s:cterm08, 'cterm256': '236'}
+
+call <sid>hi('VimwikiHeader1', s:cdBrightOrange, {}, 'bold', {})
+call <sid>hi('VimwikiHeader2', s:cdBrightYellow, {}, 'bold', {})
+call <sid>hi('VimwikiHeader3', s:cdBrightGreen, {}, 'bold', {})
+call <sid>hi('VimwikiHeader4', s:cdBrightRed, {}, 'bold', {})
+call <sid>hi('VimwikiHeader5', s:cdBrightMagenta, {}, 'bold', {})
+call <sid>hi('VimwikiHeader6', s:cdBrightBlue, {}, 'bold', {})
+call <sid>hi('VimwikiHeaderChar', s:cdHideElement, {}, 'bold', {})
+
+" cdLeftLight
+" cdSplitDark
+" cdSplitThumb
+" cdCursorDark
+" cdLineNumber
+" cdPopupHighlightBlue
+" cdDiffGreenDark
+call <sid>hi('VimwikiPreDelim', s:cdDiffRedDark, {}, 'bold', {})
+call <sid>hi('VimwikiPre', s:cdPopupHighlightBlue, {}, 'none', {})
+call <sid>hi('VimwikiPreOneLine', s:cdLightOrange, {}, 'none', {})
+call <sid>hi('textSnip', {}, {}, 'none', {})
+call <sid>hi('VimwikiCode', s:cdPopupFront, s:cdBGElement, 'none', {})
+
+call <sid>hi('VimwikiTodo', s:cdYellow, s:cdBGElement, 'bold', {})
+call <sid>hi('VimwikiListTodo', s:cdLightBlue, {}, 'bold', {})
+call <sid>hi('VimwikiWeblink1', s:cdLightBlue, {}, 'none', {})
+call <sid>hi('VimwikiLink', s:cdLightBlue, {}, 'none', {})
+call <sid>hi('VimwikiLinkChar', s:cdLightBlue, {}, 'none', {})
+
+call <sid>hi('VimwikiXiRefLine', s:cdHideElement1, {}, 'none', {})
+call <sid>hi('VimwikiBlockChar', s:cdHideElement1, {}, 'none', {})
+call <sid>hi('VimwikiPreProcLang', s:cdHideElement1, {}, 'none', {})
+" call <sid>hi('VimwikiXiParagraphStart', s:cdLightBlue, {}, 'none', {})
+
+" call <sid>hi('VimwikiHeadingDelimiter', s:cdBlue, {}, 'none', {})
+" call <sid>hi('VimwikiBold', s:cdBlue, {}, 'bold', {})
+" call <sid>hi('VimwikiRule', s:cdBlue, {}, 'bold', {})
+" call <sid>hi('VimwikiCode', s:cdOrange, {}, 'none', {})
+" hi! link VimwikiCodeDelimiter VimwikiCode
+" call <sid>hi('VimwikiFootnote', s:cdOrange, {}, 'none', {})
+" hi! link VimwikiFootnoteDefinition VimwikiFootnote
+" call <sid>hi('VimwikiUrl', s:cdLightBlue, {}, 'underline', {})
+" call <sid>hi('VimwikiLinkText', s:cdOrange, {}, 'none', {})
+" call <sid>hi('VimwikiEscape', s:cdYellowOrange, {}, 'none', {})
