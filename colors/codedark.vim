@@ -697,18 +697,13 @@ call <sid>hi('VimwikiHeader5', s:cdBrightMagenta, {}, 'bold', {})
 call <sid>hi('VimwikiHeader6', s:cdBrightBlue, {}, 'bold', {})
 call <sid>hi('VimwikiHeaderChar', s:cdHideElement, {}, 'bold', {})
 
-" cdLeftLight
-" cdSplitDark
-" cdSplitThumb
-" cdCursorDark
-" cdLineNumber
-" cdPopupHighlightBlue
-" cdDiffGreenDark
 call <sid>hi('VimwikiPreDelim', s:cdDiffRedDark, {}, 'bold', {})
 call <sid>hi('VimwikiPre', s:cdPopupHighlightBlue, {}, 'none', {})
 call <sid>hi('VimwikiPreOneLine', s:cdLightOrange, {}, 'none', {})
 call <sid>hi('textSnip', {}, {}, 'none', {})
 call <sid>hi('VimwikiCode', s:cdPopupFront, s:cdBGElement, 'none', {})
+
+call <sid>hi('VimwikiPre', s:cdYellow, {}, 'none', {})
 
 call <sid>hi('VimwikiTodo', s:cdYellow, s:cdBGElement, 'bold', {})
 call <sid>hi('VimwikiListTodo', s:cdLightBlue, {}, 'bold', {})
@@ -717,8 +712,12 @@ call <sid>hi('VimwikiLink', s:cdLightBlue, {}, 'none', {})
 call <sid>hi('VimwikiLinkChar', s:cdLightBlue, {}, 'none', {})
 
 call <sid>hi('VimwikiXiRefLine', s:cdHideElement1, {}, 'none', {})
-call <sid>hi('VimwikiBlockChar', s:cdHideElement1, {}, 'none', {})
+call <sid>hi('VimwikiBlockChar', s:cdSplitLight, s:cdBGElement, 'none', {})
+call <sid>hi('VimwikiBlockCharOneLine', s:cdHideElement1, {}, 'none', {})
 call <sid>hi('VimwikiPreProcLang', s:cdHideElement1, {}, 'none', {})
+call <sid>hi('VimwikiPreProcLangOneLine', s:cdHideElement1, {}, 'none', {})
+
+call <sid>hi('Conceal', s:cdPink, {}, 'none', {})
 " call <sid>hi('VimwikiXiParagraphStart', s:cdLightBlue, {}, 'none', {})
 
 " call <sid>hi('VimwikiHeadingDelimiter', s:cdBlue, {}, 'none', {})
